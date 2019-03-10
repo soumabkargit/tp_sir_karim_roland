@@ -1,11 +1,8 @@
 package daoImpl;
 
 import java.util.Collection;
-
 import javax.persistence.EntityManager;
-
 import entity.Allergie;
-import entity.Participant;
 import jpa.EntityManagerHelper;
 
 public class AllergieDaoImpl {
@@ -35,7 +32,6 @@ private EntityManager entityManager;
 		entityManager.merge(allergie);
 	}
 
-	@SuppressWarnings("unchecked")
 	public  Collection<Allergie> findAllAllergies(){
 		return (Collection<Allergie>)  entityManager.createNamedQuery("findAllParticipants", Allergie.class).getResultList();
 		

@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServletResponse;
 urlPatterns={"/UserInfo"})
 public class UserInfo extends HttpServlet {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -873272075166276907L;
+
 	public void doPost(HttpServletRequest request,
 			HttpServletResponse response)
 throws ServletException, IOException {

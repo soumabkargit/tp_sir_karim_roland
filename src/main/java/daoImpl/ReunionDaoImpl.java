@@ -42,7 +42,7 @@ public class ReunionDaoImpl {
 		entityManager.getTransaction().commit();
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	public  Collection<Reunion> findAllReunions(){
 		return (Collection<Reunion>)  entityManager.createNamedQuery("findAllReunions", Reunion.class).getResultList();
 		

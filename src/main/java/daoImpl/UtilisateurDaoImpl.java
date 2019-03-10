@@ -43,7 +43,7 @@ private EntityManager entityManager;
 		entityManager.getTransaction().commit();
 	}
 
-	@SuppressWarnings("unchecked")
+
 	public  Collection<Utilisateur> findAllUtilisateurs(){
 		return (Collection<Utilisateur>)  entityManager.createNamedQuery("findAllUtilisateurs", Utilisateur.class).getResultList();
 		

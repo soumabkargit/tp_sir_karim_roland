@@ -1,11 +1,8 @@
 package daoImpl;
 
 import java.util.Collection;
-
 import javax.persistence.EntityManager;
-
 import entity.Participant;
-import entity.Reunion;
 import jpa.EntityManagerHelper;
 
 public class ParticipantDaoImpl {
@@ -44,7 +41,7 @@ private EntityManager entityManager;
 		entityManager.getTransaction().commit();
 	}
 
-	@SuppressWarnings("unchecked")
+
 	public  Collection<Participant> findAllParticipants(){
 		return (Collection<Participant>)  entityManager.createNamedQuery("findAllParticipants", Participant.class).getResultList();
 		

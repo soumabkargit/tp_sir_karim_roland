@@ -14,6 +14,11 @@ urlPatterns={"/myurl"})
 public class MyServlet extends HttpServlet {
 	
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5931952924171092053L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {

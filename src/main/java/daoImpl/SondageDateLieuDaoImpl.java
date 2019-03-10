@@ -44,7 +44,7 @@ public class SondageDateLieuDaoImpl {
 		entityManager.getTransaction().commit();
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	public  Collection<SondageDateLieu> findAllSondageDateLieux(){
 		return (Collection<SondageDateLieu>)  entityManager.createNamedQuery("findAllSondageDateLieux", SondageDateLieu.class).getResultList();
 		

@@ -1,7 +1,6 @@
 package daoImpl;
 
 import javax.persistence.EntityManager;
-
 import entity.Sondage;
 import jpa.EntityManagerHelper;
 

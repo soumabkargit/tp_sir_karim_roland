@@ -1,11 +1,8 @@
 package daoImpl;
 
 import java.util.Collection;
-
 import javax.persistence.EntityManager;
-
 import entity.PreferenceAlimentaire;
-import entity.Reunion;
 import jpa.EntityManagerHelper;
 
 public class PreferenceAlimentaireDaoImpl {
@@ -35,7 +32,7 @@ private EntityManager entityManager;
 		entityManager.merge(preferenceAlimentaire);
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	public  Collection<PreferenceAlimentaire> findAllPreferenceAlimentaires(){
 		return (Collection<PreferenceAlimentaire>)  entityManager.createNamedQuery("findAllPreferenceAlimentaires", PreferenceAlimentaire.class).getResultList();
 		

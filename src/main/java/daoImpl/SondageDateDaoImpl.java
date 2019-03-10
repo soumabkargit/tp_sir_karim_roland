@@ -1,11 +1,8 @@
 package daoImpl;
 
 import java.util.Collection;
-
 import javax.persistence.EntityManager;
-
 import entity.SondageDate;
-import entity.SondageDateLieu;
 import jpa.EntityManagerHelper;
 
 public class SondageDateDaoImpl {
@@ -45,7 +42,7 @@ public class SondageDateDaoImpl {
 		entityManager.getTransaction().commit();
 	}
 	
-	@SuppressWarnings("unchecked")
+
 	public  Collection<SondageDate> findAllSondageDates(){
 		return (Collection<SondageDate>)  entityManager.createNamedQuery("findAllSondageDates", SondageDate.class).getResultList();
 		
