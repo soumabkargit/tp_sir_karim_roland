@@ -7,15 +7,17 @@ import entity.PreferenceAlimentaire;
 
 public interface PreferenceAlimentaireDao {
 	
-	public abstract PreferenceAlimentaire getPreferenceAlimentaireDaoId(int idPreferenceAlimentaire);
+	public abstract PreferenceAlimentaire getPreferenceAlimentaireById(int idPreferenceAlimentaire);
 
-	public abstract void addPreferenceAlimentaireDao(PreferenceAlimentaire preferenceAlimentaire);
+	public abstract void addPreferenceAlimentaire(PreferenceAlimentaire preferenceAlimentaire);
 
-	public abstract void removePreferenceAlimentaireDao(PreferenceAlimentaire preferenceAlimentaire);
+	public abstract void removePreferenceAlimentaire(PreferenceAlimentaire preferenceAlimentaire);
 
-	public abstract void updatePreferenceAlimentaireDao(PreferenceAlimentaire preferenceAlimentaire);
+	public abstract void updatePreferenceAlimentaire(PreferenceAlimentaire preferenceAlimentaire);
 	
 	public abstract Collection<PreferenceAlimentaire> findAllPreferenceAlimentaires();
+	
+	public abstract boolean existPreferenceAlimentaire(int idPreferenceAlimentaire) ;
 
 
 }

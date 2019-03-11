@@ -15,5 +15,7 @@ public interface SondageDao {
 	public abstract void updateSondage(Sondage sondage);
 	
 	public abstract Collection<Sondage> findAllSondages();
+	
+	
 
 }

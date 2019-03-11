@@ -2,10 +2,12 @@ package daoImpl;
 
 import java.util.Collection;
 import javax.persistence.EntityManager;
+
+import dao.SondageDateDao;
 import entity.SondageDate;
 import jpa.EntityManagerHelper;
 
-public class SondageDateDaoImpl {
+public class SondageDateDaoImpl implements SondageDateDao {
 	
 
 	private EntityManager entityManager;

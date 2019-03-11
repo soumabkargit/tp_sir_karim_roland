@@ -6,7 +6,7 @@ import entity.Participant;
 
 public interface ParticipantDao {
 	
-	public abstract Participant getParticipantById(int idParticipant);
+	public abstract Participant getParticipantById(String idParticipant);
 
 	public abstract void addParticipant(Participant participant);
 
@@ -15,5 +15,7 @@ public interface ParticipantDao {
 	public abstract void updateParticipant(Participant participant);
 	
 	public abstract Collection<Participant> findAllParticipants();
+	
+	public abstract boolean existParticipant( String emailUtilisateur );
 
 }

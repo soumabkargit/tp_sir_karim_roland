@@ -2,10 +2,12 @@ package daoImpl;
 
 import java.util.Collection;
 import javax.persistence.EntityManager;
+
+import dao.AllergieDao;
 import entity.Allergie;
 import jpa.EntityManagerHelper;
 
-public class AllergieDaoImpl {
+public class AllergieDaoImpl implements AllergieDao {
 	
 private EntityManager entityManager;
 	

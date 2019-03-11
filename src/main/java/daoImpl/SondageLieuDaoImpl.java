@@ -3,10 +3,12 @@ package daoImpl;
 import java.util.Collection;
 
 import javax.persistence.EntityManager;
+
+import dao.SondageLieuDao;
 import entity.SondageLieu;
 import jpa.EntityManagerHelper;
 
-public class SondageLieuDaoImpl {
+public class SondageLieuDaoImpl implements SondageLieuDao {
 
 
 	private EntityManager entityManager;

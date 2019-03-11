@@ -2,10 +2,12 @@ package daoImpl;
 
 import java.util.Collection;
 import javax.persistence.EntityManager;
+
+import dao.ParticipantDao;
 import entity.Participant;
 import jpa.EntityManagerHelper;
 
-public class ParticipantDaoImpl {
+public class ParticipantDaoImpl implements ParticipantDao {
 
 private EntityManager entityManager;
 	
@@ -57,5 +59,7 @@ private EntityManager entityManager;
 		}
 		return test;
 	}
+
+
 	
 }

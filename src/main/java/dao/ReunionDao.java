@@ -6,7 +6,7 @@ import entity.Reunion;
 
 public interface ReunionDao {
 	
-	public abstract Reunion getReunionId(int idReunion);
+	public abstract Reunion getReunionById(int idReunion);
 
 	public abstract void addReunion(Reunion reunion);
 
@@ -15,5 +15,7 @@ public interface ReunionDao {
 	public abstract void updateReunion(Reunion reunion);
 	
 	public abstract Collection<Reunion> findAllReunions();
+	
+	public abstract boolean existReunion(int idReunion);
 
 }

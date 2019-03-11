@@ -4,10 +4,11 @@ import java.util.Collection;
 
 import javax.persistence.EntityManager;
 
+import dao.SondageDateLieuDao;
 import entity.SondageDateLieu;
 import jpa.EntityManagerHelper;
 
-public class SondageDateLieuDaoImpl {
+public class SondageDateLieuDaoImpl implements SondageDateLieuDao {
 
 
 	private EntityManager entityManager;
@@ -59,6 +60,6 @@ public class SondageDateLieuDaoImpl {
 			test = true;
 		}
 		return test;
-	}	
+	}
 	
 }

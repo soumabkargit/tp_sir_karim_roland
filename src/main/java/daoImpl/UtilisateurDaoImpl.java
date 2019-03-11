@@ -4,10 +4,11 @@ import java.util.Collection;
 
 import javax.persistence.EntityManager;
 
+import dao.UtilisateurDao;
 import entity.Utilisateur;
 import jpa.EntityManagerHelper;
 
-public class UtilisateurDaoImpl {
+public class UtilisateurDaoImpl implements UtilisateurDao {
 
 private EntityManager entityManager;
 	

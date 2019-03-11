@@ -2,10 +2,12 @@ package daoImpl;
 
 import java.util.Collection;
 import javax.persistence.EntityManager;
+
+import dao.PreferenceAlimentaireDao;
 import entity.PreferenceAlimentaire;
 import jpa.EntityManagerHelper;
 
-public class PreferenceAlimentaireDaoImpl {
+public class PreferenceAlimentaireDaoImpl implements PreferenceAlimentaireDao {
 	
 private EntityManager entityManager;
 	
@@ -58,6 +60,8 @@ private EntityManager entityManager;
 	public void commitTransaction() {
 		entityManager.getTransaction().commit();
 	}
+
+
 
 
 }
