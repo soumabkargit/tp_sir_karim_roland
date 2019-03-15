@@ -23,7 +23,10 @@ public class SondageLieuDaoImpl implements SondageLieuDao {
 	}
 
 	public void addSondageLieu(SondageLieu sondageLieu) {
-		entityManager.persist(sondageLieu);
+		if (!this.existSondageLieu(sondageLieu.getIdSondage())) {
+			entityManager.persist(sondageLieu);
+		}		
+		
 	}
 
 	

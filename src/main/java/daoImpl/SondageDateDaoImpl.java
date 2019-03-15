@@ -22,7 +22,9 @@ public class SondageDateDaoImpl implements SondageDateDao {
 	}
 
 	public void addSondageDate(SondageDate sondageDate) {
-		entityManager.persist(sondageDate);
+		if (!this.existSondageDate(sondageDate.getIdSondage())) {
+			entityManager.persist(sondageDate);
+		}
 	}
 
 	

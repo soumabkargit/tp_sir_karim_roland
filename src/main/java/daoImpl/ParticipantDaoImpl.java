@@ -21,7 +21,10 @@ private EntityManager entityManager;
 	}
 
 	public void addParticipant(Participant participant) {
-		entityManager.persist(participant);
+		if (!this.existParticipant(participant.getEmailUtilisateur())) {
+			entityManager.persist(participant);
+		}
+		
 	}
 
 	

@@ -21,7 +21,11 @@ private EntityManager entityManager;
 	}
 
 	public void addPreferenceAlimentaire(PreferenceAlimentaire preferenceAlimentaire) {
-		entityManager.persist(preferenceAlimentaire);
+		
+		if (!this.existPreferenceAlimentaire(preferenceAlimentaire.getIdPreferenceAlimentaire())) {
+			entityManager.persist(preferenceAlimentaire);
+		}
+
 	}
 
 	

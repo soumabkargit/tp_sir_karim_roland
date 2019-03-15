@@ -22,7 +22,10 @@ private EntityManager entityManager;
 	}
 
 	public void addUtilisateur(Utilisateur utilisateur) {
-		entityManager.persist(utilisateur);
+		if (!this.existUtilisateur(utilisateur.getEmailUtilisateur())) {
+			entityManager.persist(utilisateur);
+		}
+		
 	}
 
 	

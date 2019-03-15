@@ -22,7 +22,9 @@ public class ReunionDaoImpl implements ReunionDao {
 	}
 
 	public void addReunion(Reunion reunion) {
-		entityManager.persist(reunion);
+		if (!this.existReunion(reunion.getIdReunion())) {
+			entityManager.persist(reunion);
+		}
 	}
 
 	

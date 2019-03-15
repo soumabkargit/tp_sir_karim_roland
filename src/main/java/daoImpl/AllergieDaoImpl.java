@@ -21,7 +21,9 @@ private EntityManager entityManager;
 	}
 
 	public void addAllergie(Allergie allergie) {
-		entityManager.persist(allergie);
+		if (!this.existAllergie(allergie.getIdAllergie())) {
+			entityManager.persist(allergie);
+		}
 	}
 
 	
