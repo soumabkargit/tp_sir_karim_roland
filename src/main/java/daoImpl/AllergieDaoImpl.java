@@ -10,7 +10,7 @@ import jpa.EntityManagerHelper;
 public class AllergieDaoImpl implements AllergieDao {
 	
 private EntityManager entityManager;
-	
+	 
 	public AllergieDaoImpl() {
 		entityManager = EntityManagerHelper.getEntityManager();
 	}

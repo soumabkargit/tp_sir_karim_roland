@@ -46,6 +46,7 @@ private EntityManager entityManager;
 		entityManager.getTransaction().commit();
 	}
 
+	
 
 	public  Collection<Participant> findAllParticipants(){
 		return (Collection<Participant>)  entityManager.createNamedQuery("findAllParticipants", Participant.class).getResultList();

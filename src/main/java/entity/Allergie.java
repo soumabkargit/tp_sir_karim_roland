@@ -1,13 +1,23 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Collection;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 @Entity
-public class Allergie {
+public class Allergie implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int idAllergie;
 	private String libelleAllergie;
 	private Collection<Participant> participants;
@@ -27,7 +37,8 @@ public class Allergie {
 		this.libelleAllergie = libelleAllergie;
 	}
 	
-	@ManyToMany(mappedBy="allergies")
+	@JsonManagedReference
+	@ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	public Collection<Participant> getParticipants() {
 		return participants;
 	}

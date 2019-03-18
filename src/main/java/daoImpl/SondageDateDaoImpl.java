@@ -1,6 +1,8 @@
 package daoImpl;
 
 import java.util.Collection;
+import java.util.List;
+
 import javax.persistence.EntityManager;
 
 import dao.SondageDateDao;
@@ -10,7 +12,7 @@ import jpa.EntityManagerHelper;
 public class SondageDateDaoImpl implements SondageDateDao {
 	
 
-	private EntityManager entityManager;
+	private EntityManager entityManager; 
 	
 	public SondageDateDaoImpl() {
 		entityManager = EntityManagerHelper.getEntityManager();
@@ -47,11 +49,11 @@ public class SondageDateDaoImpl implements SondageDateDao {
 	}
 	
 
-	public  Collection<SondageDate> findAllSondageDates(){
-		return (Collection<SondageDate>)  entityManager.createNamedQuery("findAllSondageDates", SondageDate.class).getResultList();
+	public  List<SondageDate> findAllSondageDates(){
+		return (List<SondageDate>)  entityManager.createNamedQuery("findAllSondageDates", SondageDate.class).getResultList();
 		
 	}
-
+ 
 	public boolean existSondageDate(int idSondage) {
 		SondageDate sondageDate = entityManager.find(SondageDate.class, idSondage);
 		boolean test;
@@ -62,6 +64,6 @@ public class SondageDateDaoImpl implements SondageDateDao {
 		}
 		return test;
 	}	
-	
+	 
 
 }

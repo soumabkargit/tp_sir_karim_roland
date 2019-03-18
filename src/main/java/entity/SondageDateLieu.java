@@ -1,10 +1,13 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
@@ -12,15 +15,21 @@ import javax.persistence.NamedQuery;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 @Entity
 @DiscriminatorValue(value="SondageDateLieu")
 @NamedQueries({
     @NamedQuery(name = "findAllSondageDateLieux", query = "SELECT s FROM SondageDateLieu s")})
-public class SondageDateLieu extends Sondage {
+public class SondageDateLieu extends Sondage implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Temporal(TemporalType.DATE)
 	private Date dateSondageDateLieu;
-	private boolean pauseDejeuneSondageDateLieur;
 	private String lieuSondageDateLieu;
 	private Collection <Participant> participants;
 	private Utilisateur utilisateurSondageDateLieu;
@@ -32,12 +41,7 @@ public class SondageDateLieu extends Sondage {
 	public void setDateSondageDateLieu(Date dateSondageDateLieu) {
 		this.dateSondageDateLieu = dateSondageDateLieu;
 	}
-	public boolean isPauseDejeuneSondageDateLieur() {
-		return pauseDejeuneSondageDateLieur;
-	}
-	public void setPauseDejeuneSondageDateLieur(boolean pauseDejeuneSondageDateLieur) {
-		this.pauseDejeuneSondageDateLieur = pauseDejeuneSondageDateLieur;
-	}
+	
 	public String getLieuSondageDateLieu() {
 		return lieuSondageDateLieu;
 	}
@@ -45,14 +49,15 @@ public class SondageDateLieu extends Sondage {
 		this.lieuSondageDateLieu = lieuSondageDateLieu;
 	}
 	
-	@ManyToMany(mappedBy="sondageDateLieux")
+	@JsonManagedReference
+	@ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	public Collection<Participant> getParticipants() {
 		return participants;
 	}
 	public void setParticipants(Collection<Participant> participants) {
 		this.participants = participants;
 	}
-	
+	 @JsonBackReference
 	@ManyToOne
 	public Utilisateur getUtilisateurSondageDateLieu() {
 		return utilisateurSondageDateLieu;

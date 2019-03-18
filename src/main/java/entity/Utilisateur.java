@@ -1,18 +1,23 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.Collection;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+
+import org.codehaus.jackson.annotate.JsonManagedReference;
 
 @Entity
 @DiscriminatorValue(value="Utilisateur")
 @NamedQueries({
     @NamedQuery(name = "findAllUtilisateurs", query = "SELECT u FROM Utilisateur u")})
-public class Utilisateur extends UserDoodle {
+public class Utilisateur extends UserDoodle implements Serializable {
 
 	private String motPasse;
     private Collection<SondageDate> sondageDates;
@@ -29,7 +34,8 @@ public class Utilisateur extends UserDoodle {
 
     
 
-	@OneToMany(mappedBy="utilisateurSondageLieu")
+	@JsonManagedReference
+	@OneToMany(mappedBy="utilisateurSondageLieu",cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	public Collection<SondageLieu> getSondageLieux() {
 		return sondageLieux;
 	}
@@ -37,8 +43,8 @@ public class Utilisateur extends UserDoodle {
 	public void setSondageLieu(Collection<SondageLieu> sondageLieux) {
 		this.sondageLieux = sondageLieux;
 	}	
-	
-	@OneToMany(mappedBy="utilisateurSondageDateLieu")
+	@JsonManagedReference
+	@OneToMany(mappedBy="utilisateurSondageDateLieu",cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	public Collection<SondageDateLieu> getSondageDateLieu() {
 		return sondageDateLieux;
 	}
@@ -47,8 +53,8 @@ public class Utilisateur extends UserDoodle {
 		this.sondageDateLieux = sondageDateLieu;
 	}
 
-	
-	@OneToMany(mappedBy="utilisateurSondageDate")
+	@JsonManagedReference
+	@OneToMany(mappedBy="utilisateurSondageDate",cascade = CascadeType.ALL, fetch= FetchType.EAGER)
 	public Collection<SondageDate> getSondageDates() {
 		return sondageDates;
 	}

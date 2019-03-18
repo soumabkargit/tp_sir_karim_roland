@@ -48,7 +48,7 @@ public class AllergieController {
 		}
 		 
 	    }
-	 
+	  
 	 
 	 @POST
 	 @Produces(MediaType.APPLICATION_JSON)
