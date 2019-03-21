@@ -377,6 +377,8 @@ public class PeuplageBDController {
 		SondageDateLieu s11 = new SondageDateLieu();
 		SondageDateLieu s12 = new SondageDateLieu();
 		
+		
+		
 		Collection<SondageDateLieu> sondageDateLieux0 = new ArrayList<SondageDateLieu>();
 		Collection<SondageDateLieu> sondageDateLieux1 = new ArrayList<SondageDateLieu>();
 		Collection<SondageDateLieu> sondageDateLieux2 = new ArrayList<SondageDateLieu>();
@@ -386,6 +388,21 @@ public class PeuplageBDController {
 		Collection<SondageDateLieu> sondageDateLieux5 = new ArrayList<SondageDateLieu>();
 		
 		Collection<SondageDateLieu> sondageDateLieux6 = new ArrayList<SondageDateLieu>();
+		
+		sondageDateLieux2.add(s10);
+		sondageDateLieux1.add(s11);
+		sondageDateLieux0.add(s12);
+		
+		sondageDateLieux5.add(s10);
+		sondageDateLieux5.add(s11);
+		sondageDateLieux4.add(s11);
+		sondageDateLieux4.add(s12);
+		sondageDateLieux3.add(s10);
+		sondageDateLieux3.add(s12);
+		
+		sondageDateLieux6.add(s10);
+		sondageDateLieux6.add(s11);
+		sondageDateLieux6.add(s12);
 		
 		SondageLieu s20 = new SondageLieu();
 		SondageLieu s21 = new SondageLieu();
@@ -400,6 +417,21 @@ public class PeuplageBDController {
 		Collection<SondageLieu> sondageLieux5 = new ArrayList<SondageLieu>();
 		
 		Collection<SondageLieu> sondageLieux6 = new ArrayList<SondageLieu>();
+		
+		sondageLieux1.add(s20);
+		sondageLieux0.add(s21);
+		sondageLieux2.add(s22);
+		
+		sondageLieux4.add(s20);
+		sondageLieux4.add(s21);
+		sondageLieux5.add(s21);
+		sondageLieux5.add(s22);
+		sondageLieux3.add(s20);
+		sondageLieux3.add(s22);
+		
+		sondageLieux6.add(s20);
+		sondageLieux6.add(s21);
+		sondageLieux6.add(s22);
 
 		Participant participantDateLieu = new Participant();
 		participantDateLieu.setEmailUtilisateur("mtouganroland@gmail.com");
@@ -407,6 +439,7 @@ public class PeuplageBDController {
 		participantDateLieu.setPrenom("Roland");
 		participantDateLieu.setAllergies(allergies0);
 		participantDateLieu.setPreferenceAlimentaire(preferenceAlimentaire0);
+		participantDateLieu.setSondageDateLieux(sondageDateLieux6);
 		serviceParticipantDaoImpl.addParticipant(participantDateLieu);
 		
 		Participant participantDate = new Participant();
@@ -424,6 +457,7 @@ public class PeuplageBDController {
 		participantLieu.setPrenom("Roland");
 		participantLieu.setPreferenceAlimentaire(preferenceAlimentaire2);
 		participantLieu.setAllergies(allergies2);
+		participantLieu.setSondageLieux(sondageLieux6);
 		serviceParticipantDaoImpl.addParticipant(participantLieu);
 		
 		for (int i = 0; i <= 99; i++) {
@@ -431,45 +465,69 @@ public class PeuplageBDController {
 			participant.setEmailUtilisateur(i+"participant@gmail.com");
 			participant.setNom("nom_"+i);
 			participant.setPrenom("prenom_"+i);
-			 
+			
 			if (i<=9) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire0);
 				participant.setAllergies(allergies0);
+				participant.setSondageDate(sondageDates0);
+				participant.setSondageLieux(sondageLieux6);
+				participant.setSondageDateLieux(sondageDateLieux5);
 			}else if (10>=i || i<=19) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire1);
 				participant.setAllergies(allergies1);
+				participant.setSondageDate(sondageDates1);
+				participant.setSondageLieux(sondageLieux5);
+				participant.setSondageDateLieux(sondageDateLieux4);
 			}else if (20>=i || i<=29) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire2);
 				participant.setAllergies(allergies2);
+				participant.setSondageDate(sondageDates2);
+				participant.setSondageLieux(sondageLieux4);
+				participant.setSondageDateLieux(sondageDateLieux3);
 			}
 			else if (30>=i || i<=39) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire3);
 				participant.setAllergies(allergies3);
+				participant.setSondageDate(sondageDates3);
+				participant.setSondageLieux(sondageLieux2);
+				participant.setSondageDateLieux(sondageDateLieux6);
 			}
 			else if (40>=i || i<=49) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire4);
 				participant.setAllergies(allergies4);
+				participant.setSondageDate(sondageDates4);
+				participant.setSondageLieux(sondageLieux3);
+				participant.setSondageDateLieux(sondageDateLieux2);
 			}
 			else if (50>=i || i<=59) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire5);
 				participant.setAllergies(allergies5);
+				participant.setSondageDate(sondageDates5);
+				participant.setSondageLieux(sondageLieux1);
+				participant.setSondageDateLieux(sondageDateLieux0);
 			}
 			else if (60>=i || i<=69) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire6);
 				participant.setAllergies(allergies6);
+				participant.setSondageDate(sondageDates6);
+				participant.setSondageLieux(sondageLieux0);
+				participant.setSondageDateLieux(sondageDateLieux1);
 			}
 			else if (70>=i || i<=79) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire7);
-				participant.setAllergies(allergies0);
+				participant.setAllergies(allergies0);			
+				participant.setSondageLieux(sondageLieux6);
 			}
 			else if (80>=i || i<=89) {
 				participant.setPreferenceAlimentaire(preferenceAlimentaire8);
 				participant.setAllergies(allergies1);
+				participant.setSondageDate(sondageDates6);
 			}
 			else 
 			{
 				participant.setPreferenceAlimentaire(preferenceAlimentaire9);
 				participant.setAllergies(allergies2);
+				participant.setSondageDateLieux(sondageDateLieux6);
 			}
 			
 			serviceParticipantDaoImpl.addParticipant(participant);
@@ -480,8 +538,8 @@ public class PeuplageBDController {
 		
 
 		
-		/*
-
+		
+/*
 		serviceUtilisateurDaoImpl.beginTransaction();
 		Utilisateur utilisateurAbdoul_Karim0 = new Utilisateur();
 		utilisateurAbdoul_Karim0 = serviceUtilisateurDaoImpl.getUtilisateurById("soumabkar@gmail.com");
@@ -489,7 +547,7 @@ public class PeuplageBDController {
 		sondageLieuAbdoul_karim0 = serviceSondageLieuDaoImpl.getSondageLieuById(1);
 		Collection<SondageLieu> ListSondageLieuAbdoul_karim0 = new ArrayList<SondageLieu>();
 		ListSondageLieuAbdoul_karim0.add(sondageLieuAbdoul_karim0);
-		utilisateurAbdoul_Karim0.setSondageLieu(ListSondageLieuAbdoul_karim0);
+		utilisateurAbdoul_Karim0.setSondageLieu(sondageLieux6);
 		serviceUtilisateurDaoImpl.updateUtilisateur(utilisateurAbdoul_Karim0);
 		
 		Utilisateur utilisateurAbbah0 = new Utilisateur();
@@ -586,9 +644,9 @@ public class PeuplageBDController {
 		
 		serviceUtilisateurDaoImpl.commitTransaction();
 		
-		
-		
 		*/
+		
+		
 			
 		
 		
