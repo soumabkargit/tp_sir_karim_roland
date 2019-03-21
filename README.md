@@ -1,5 +1,15 @@
 # Template de projet pour le TP SIR en M1 Miage 2019 UniR
 # tp_sir_karim_roland
+
+
+
+PROJET DOODLE
+le port sur lequel notre application fonctione est le 8085 qu'on peut changer dans le fichier pom.
+Un exemple de service est: localhost:8085/rest/participant/
+
+
+
+
 tp3_SirMongodb
 
 Quelles sont les limites d’une base données orientées document ? (à répondre dans le compte rendu de TP (le readme)
@@ -26,6 +36,4 @@ Que peut on faire comme types de requêtes ?
 
 On peut faire des requêtes avec les clefs"
 
-PROJET DOODLE
-le port sur lequel notre application fonctione est le 8085 qu'on peut changer dans le fichier pom.
-Un exemple de service est: localhost:8085/rest/participant/
+
